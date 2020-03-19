@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import people from '../Data/data';
 import Person from '../Person/Person';
+import './Card.css';
 
 
 class Card extends Component {
@@ -58,12 +59,13 @@ nextIndex = () => {
         })
         // console.log(mappedData)
         return(
-            <div>
+            <div className='card'>
                 <h1>{personIndex + 1}/{people.length}</h1>
                 {mappedData[personIndex]}
+                <div className='buttonDiv'>
                 <button onClick={this.previousIndex}>Previous</button>
                 <button onClick={this.nextIndex}>Next</button>
-                
+                </div>
             </div>
         );
     }
